@@ -25,7 +25,7 @@ export const fetchAllQouestions = () => async (dispatch) => {
 
 export const deleteQuestion = (id, navigate)=> async(dispatch)=>{
   try {
-    const {data} = api.deleteQuestion(id)
+    api.deleteQuestion(id)
     dispatch(fetchAllQouestions())
     navigate('/')
   } catch (error) {
@@ -35,7 +35,7 @@ export const deleteQuestion = (id, navigate)=> async(dispatch)=>{
 
 export const voteQuestion = (id, value, userId) => async (dispatch) =>{
 try {
-  const {data} = await api.voteQuestion(id, value, userId)
+  await api.voteQuestion(id, value, userId)
   dispatch(fetchAllQouestions())
 } catch (error) {
   console.log(error)
@@ -59,7 +59,7 @@ export const postAnswer = (answerData) => async (dispatch) => {
 
 export const deleteAnswer = (id, answerId, noOfAnswers) => async (dispatch) =>{
   try {
-    const {data} = await api.deleteAnswer(id, answerId, noOfAnswers)
+ await api.deleteAnswer(id, answerId, noOfAnswers)
     dispatch(fetchAllQouestions())
   } catch (error) {
     console.log(error)

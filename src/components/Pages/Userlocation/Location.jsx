@@ -14,7 +14,7 @@ const Location = () => {
   const [markers, setMarkers] = useState([]);
   const [map, setMap] = useState(null);
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env. AIzaSyB4VefQ8ebgMAgNDP0MEWokIEGSBuQq,
+    googleMapsApiKey: process.env.AIzaSyB4VefQ8ebgMAgNDP0MEWokIEGSBuQq,
   });
 
   useEffect(() => {

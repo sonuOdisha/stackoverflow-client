@@ -32,7 +32,8 @@ const Navbar = () => {
 
     
     dispatch(setCurrentUser(JSON.parse(localStorage.getItem("Profile"))));
-  }, [dispatch]);
+  // eslint-disable-next-line
+  }, []);
 
   return (
     <nav className="main-nav">
