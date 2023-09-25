@@ -3,7 +3,7 @@ import "./Chatbot.css"
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from "@chatscope/chat-ui-kit-react"
 import LeftSidebar from '../../LeftSidebar/LeftSidebar';
-const API_KEY = "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"; 
+const API_KEY = process.env.REACT_APP_API_KEY; 
 
 
 const Chatbot = () => {
@@ -65,8 +65,6 @@ await fetch("https://api.openai.com/v1/chat/completions",{
 }).then((data) =>{
 return data.json();
 }).then((data) =>{
-console.log(data);
-console.log(data.choices[0].message.content);
 setMessages(
     [...chatMessages,{
        message: data.choices[0].message.content,
